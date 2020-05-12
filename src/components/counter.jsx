@@ -7,23 +7,19 @@ export class Counter extends Component {
         tags: ['tag1', 'tag2', 'tag3']
     }
 
-    // constructor() {
-    //     super();
-    //     // console.log(this);
-    //     this.handleIncrement = this.handleIncrement.bind(this);
-    // }
-
-    handleIncrement = () => {
-        console.log("hehehe");
-
-        console.log(this);
+    handleIncrement = product => {
+        console.log(product);
+        this.setState({ counter: this.state.counter + 1});
     }
 
+    doHandleIncrement = () => {
+        this.handleIncrement({ id: 1, name: 'Mì Tôm'})
+    }
   render() {
     return (
       <React.Fragment>
         <span style={{ fontSize: 20 }} className={this.getBadgeClasses()}>{this.formatCounter()}</span>
-        <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
+        <button onClick={() => this.handleIncrement({ id: 1, name: 'Mì Tôm'})} className="btn btn-secondary btn-sm">Increment</button>
       </React.Fragment>
     );
   }
