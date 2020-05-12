@@ -17,10 +17,10 @@ export class Counter extends Component {
     }
   render() {
     return (
-      <React.Fragment>
+      <div>
         <span style={{ fontSize: 20 }} className={this.getBadgeClasses()}>{this.formatCounter()}</span>
         <button onClick={() => this.handleIncrement({ id: 1, name: 'Mì Tôm'})} className="btn btn-secondary btn-sm">Increment</button>
-      </React.Fragment>
+      </div>
     );
   }
 
